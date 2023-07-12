@@ -32,15 +32,13 @@ else {
      $AutoReplyMessage = $AutoReplyTemplate -replace '\{PRIVATECONTACT_EN}', ""
 }
 
-Write-Host $AutoReplyMessage
-
 Set-Mailbox -Identity $ArchiveUser -Type Shared
+Set-MailboxAutoReplyConfiguration -Identity $ArchiveUser -ExternalAudience All -AutoReplyState Enabled -ExternalMessage $AutoReplyMessage -InternalMessage $AutoReplyMessage
 
 Set-Mailbox -Identity $ArchiveUser -HiddenFromAddressListsEnabled $true
 
-
 $DisplayName = "[ARCHIVE] - " + $User.DisplayName.ToString()
 Set-User -Identity $ArchiveUser -DisplayName $DisplayName
-Set-MailboxAutoReplyConfiguration -Identity $ArchiveUser -ExternalAudience All -AutoReplyState Enabled -ExternalMessage $AutoReplyMessage -InternalMessage $AutoReplyMessage
+
 $Continue = Read-Host -Prompt 'Do you want to archive another user? (Y/N)'
 } while ($Continue -eq 'Y')
