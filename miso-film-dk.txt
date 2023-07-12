@@ -9,12 +9,12 @@
     <hr>
     <P><b>Thank you for your e-mail</b></P>
     <P>
-    This is an autoreply to inform that " + $Displayname +" has stopped working at Miso Film, and that this mailbox soon will be closed.<BR>
-    <br>The mail is not being monitered, so you'll have to send it again to a known employee at Miso Film, or to " + $ForwardingEmailCorporate + ".</P>
+    This is an autoreply to inform that {NAME} has stopped working at Miso Film, and that this mailbox soon will be closed.<BR>
+    <br>The mail is not being monitered, so you'll have to send it again to a known employee at Miso Film, or to info@misofilm.dk.</P>
      {PRIVATECONTACT_EN}
     <HL>
     <P>
     Med venlig hilsen / Best regards<BR>
     Miso Film ApS
     </P>
-    </body></html>"
+    </body></html>

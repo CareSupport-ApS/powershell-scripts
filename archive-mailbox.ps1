@@ -23,6 +23,7 @@ $User = Get-Mailbox -Identity $ArchiveUser
 Write-Host "Will archive" $User.DisplayName
 
 $AutoReplyMessage = $AutoReplyTemplate -replace '\{NAME\}', $User.DisplayName
+
 if ($PrivateContact -ne "") {
     $AutoReplyMessage = $AutoReplyTemplate -replace '\{PRIVATECONTACT_DK}', ($User.DisplayName + " kan kontaktes på: " + $PrivateContact)
   $AutoReplyMessage = $AutoReplyTemplate -replace '\{PRIVATECONTACT_EN}', ($User.DisplayName + " can be contacted on: " + $PrivateContact)
