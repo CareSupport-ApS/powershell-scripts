@@ -1,0 +1,37 @@
+<html>
+     <body>
+    <P><b>Tak for din mail</b></P>
+    <P>
+    Dette autosvar er for at informere om at {NAME} ikke længere arbejder for Nimbus Film, og at denne mail snart bliver lukket ned.<BR>
+    <br>Mailboksen bliver ikke læst, og du skal derfor sende din mail igen til en anden medarbejder på Nimbus Film, eller til nimbusfilm@nimbusfilm.dk.</P><HL>
+    <hr>
+    <P><b>Thank you for your e-mail</b></P>
+    <P>
+    This is an autoreply to inform that {NAME} has stopped working at Nimbus Film, and that this mailbox soon will be closed.<BR>
+    <br>The mail is not being monitered, so you'll have to send it again to a known employee at Nimbus Film, or to nimbusfilm@nimbusfilm.dk.</P><HL>
+    <P>
+    Med venlig hilsen / Best regards<BR>
+    Nimbus Film AS
+    </P>
+    </body></html>
+
+    <html>
+     <body>
+    <P><b>Tak for din mail</b></P>
+    <P>
+    Dette autosvar er for at informere om at {NAME} ikke længere arbejder for Miso Film, og at denne mail snart bliver lukket ned.<BR>
+    <br>Mailboksen bliver ikke læst, og du skal derfor sende din mail igen til en anden medarbejder på Miso Film, eller til info@misofilm.dk.</P>
+    {PRIVATECONTACT_DK}
+    <HL>
+    <hr>
+    <P><b>Thank you for your e-mail</b></P>
+    <P>
+    This is an autoreply to inform that " + $Displayname +" has stopped working at Miso Film, and that this mailbox soon will be closed.<BR>
+    <br>The mail is not being monitered, so you'll have to send it again to a known employee at Miso Film, or to " + $ForwardingEmailCorporate + ".</P>
+     {PRIVATECONTACT_EN}
+    <HL>
+    <P>
+    Med venlig hilsen / Best regards<BR>
+    Miso Film ApS
+    </P>
+    </body></html>"
