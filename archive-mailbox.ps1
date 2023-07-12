@@ -25,12 +25,12 @@ Write-Host "Will archive" $User.DisplayName
 $AutoReplyMessage = $AutoReplyTemplate -replace '\{NAME\}', $User.DisplayName
 
 if ($PrivateContact -ne "") {
-    $AutoReplyMessage = $AutoReplyTemplate -replace '\{PRIVATECONTACT_DK\}', ($User.DisplayName + " kan kontaktes på: " + $PrivateContact)
-  $AutoReplyMessage = $AutoReplyTemplate -replace '\{PRIVATECONTACT_EN\}', ($User.DisplayName + " can be contacted on: " + $PrivateContact)
+    $AutoReplyMessage = $AutoReplyMessage -replace '\{PRIVATECONTACT_DK\}', ($User.DisplayName + " kan kontaktes på: " + $PrivateContact)
+  $AutoReplyMessage = $AutoReplyMessage -replace '\{PRIVATECONTACT_EN\}', ($User.DisplayName + " can be contacted on: " + $PrivateContact)
 }
 else {
-    $AutoReplyMessage = $AutoReplyTemplate -replace '\{PRIVATECONTACT_DK\}', ""
-     $AutoReplyMessage = $AutoReplyTemplate -replace '\{PRIVATECONTACT_EN\}', ""
+    $AutoReplyMessage = $AutoReplyMessage -replace '\{PRIVATECONTACT_DK\}', ""
+     $AutoReplyMessage = $AutoReplyMessage -replace '\{PRIVATECONTACT_EN\}', ""
 }
 
 Write-Host $AutoReplyMessage
