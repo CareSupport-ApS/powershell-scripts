@@ -4,14 +4,16 @@ $AdminUser = Read-Host -Prompt 'Enter azure admin e-mail'
 
 Connect-ExchangeOnline -UserPrincipalName $AdminUser
 
- do {
-        $AutoReplyFile = Read-Host -Prompt 'Enter the path to the auto-reply file'
-        if (-not (Test-Path -Path $AutoReplyFile -PathType Leaf)) {
-            Write-Host "Auto-reply file not found. Please enter a valid file path."
-        }
-    } while (-not (Test-Path -Path $AutoReplyFile -PathType Leaf))
-
-$AutoReplyTemplate = Get-Content -Path $AutoReplyFile -Raw
+do {
+    $GitHubRawLink = Read-Host -Prompt 'Enter the GitHub raw link to the auto-reply file'
+    
+    try {
+        $AutoReplyTemplate = Invoke-WebRequest -Uri $GitHubRawLink | Select-Object -ExpandProperty Content
+    }
+    catch {
+        Write-Host "Failed to fetch the auto-reply file from the GitHub raw link. Please enter a valid link."
+    }
+} while ([string]::IsNullOrEmpty($AutoReplyTemplate))
 
 do {
 $ArchiveUser = Read-Host -Prompt 'Enter e-mail of the user you want to archive'
