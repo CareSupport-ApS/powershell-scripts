@@ -17,9 +17,7 @@ if (-not $Customer) {
 }
 
 # 3. Get Graph token for customer's tenant
-$Token = New-PartnerAccessToken -CustomerId $Customer.CustomerId `
-    -Resource "https://graph.microsoft.com" `
-    -Scopes "https://graph.microsoft.com/.default"
+$Token = New-PartnerAccessToken -CustomerId $Customer.CustomerId -Resource "https://graph.microsoft.com"
 
 # 4. Connect Graph with access token (app-only)
 Connect-MgGraph -AccessToken $Token.AccessToken
