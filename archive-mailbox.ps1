@@ -1,8 +1,15 @@
 Import-module ExchangeOnlineManagement
 
-$AdminUser = Read-Host -Prompt 'Enter azure admin e-mail'
+$UseDelegated = Read-Host "Run with delegated access via partner login? (Y/N)"
 
-Connect-ExchangeOnline -UserPrincipalName $AdminUser
+if ($UseDelegated -eq 'Y') {
+    $PartnerAdminUser = Read-Host -Prompt 'Enter your partner admin e-mail'
+    $CustomerDomain = Read-Host -Prompt 'Enter the domain of the customer'
+    Connect-ExchangeOnline -UserPrincipalName $PartnerAdminUser -DelegatedOrganization $CustomerDomain
+} else {
+    $AdminUser = Read-Host -Prompt 'Enter azure admin e-mail'
+    Connect-ExchangeOnline -UserPrincipalName $AdminUser
+}
 
 do {
     $GitHubRawLink = Read-Host -Prompt 'Enter the GitHub raw link to the auto-reply file'
