@@ -8,7 +8,7 @@
     <P><b>Thank you for your e-mail</b></P>
     <P>
     This is an autoreply to inform that {NAME} has stopped working at SF Studios, and that this mailbox soon will be closed.<BR>
-    <br>The mail is not being monitered, so you'll have to send it again to a known employee at Nimbus Film, or to info@sfstudios.dk</P><HL>
+    <br>The mail is not being monitered, so you'll have to send it again to a known employee at SF Studios, or to info@sfstudios.dk</P><HL>
     <P>
     Med venlig hilsen / Best regards<BR>
     SF Studios
